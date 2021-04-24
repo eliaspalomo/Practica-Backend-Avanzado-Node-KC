@@ -1,7 +1,7 @@
 'use strict';
 const serverBBDD = 'mongodb://localhost/PracticaEPV';
 const mongoose = require('mongoose');
-
+ 
 async function connectBBDD() {
     await mongoose.connect(serverBBDD, {
         useNewUrlParser: true,
