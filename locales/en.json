@@ -1,0 +1,17 @@
+{
+	"Pagina de la Practica de Node BackEnd": "Node BackEnd Practice Page",
+	"Listado los anuncios de NodePOP": "List of NodePOP ads",
+	"Nombre de artículo:": "Article name:",
+	"Precio:": "Price:",
+	"Se puede poner: Un valor fijo, Con un guion detras para que los valores sean superiores, Con un guion delante para que los valores sean inferiores, o Dos valores separados por un guion para sacar entre  esos valores.":
+    "You can put: A fixed value, With a dash behind so that the values are higher, With a dash in front so that the values are lower, or Two values separated by a dash to get between those values.",
+	"En venta:": "On sale:",
+	"Para comprar:": "To buy:",
+	"Todos:": "All:",
+	"Paginación:": "Pagination:",
+	"Articulo:": "Article:",
+	"En Venta": "On Sale",
+	"Etiquetas:": "Tags:",
+	"Para comprar": "To buy",
+	"Listar los tags": "List the tags"
+}

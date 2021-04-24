@@ -1,0 +1,16 @@
+{
+	"Pagina de la Practica de Node BackEnd": "Pagina de la Practica de Node BackEnd",
+	"Listado los anuncios de NodePOP": "Listado los anuncios de NodePOP",
+	"Nombre de artículo:": "Nombre de artículo:",
+	"Precio:": "Precio:",
+	"Se puede poner: Un valor fijo, Con un guion detras para que los valores sean superiores, Con un guion delante para que los valores sean inferiores, o Dos valores separados por un guion para sacar entre  esos valores.": "Se puede poner: Un valor fijo, Con un guion detras para que los valores sean superiores, Con un guion delante para que los valores sean inferiores, o Dos valores separados por un guion para sacar entre  esos valores.",
+	"En venta:": "En venta:",
+	"Para comprar:": "Para comprar:",
+	"Todos:": "Todos:",
+	"Paginación:": "Paginación:",
+	"Articulo:": "Articulo:",
+	"En Venta": "En Venta",
+	"Etiquetas:": "Etiquetas:",
+	"Para comprar": "Para comprar",
+	"Listar los tags": "Listar los tags"
+}

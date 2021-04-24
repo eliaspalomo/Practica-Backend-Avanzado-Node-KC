@@ -24,9 +24,13 @@ app.use(express.static(path.join(__dirname, 'public')));
  * Rutas del API
  */
 app.use('/api/nodepop', require('./routes/api/nodepop'));
+// Setup de i18n
+const i18n = require('./lib/i18nConfigure');
+app.use(i18n.init);
 app.use('/api/tag', require('./routes/api/tag'));
 
 app.use('/',      require('./routes/index'));
+app.use('/change-locale', require('./routes/change-locale'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -40,7 +44,7 @@ app.use(function(err, req, res, next) {
   if(err.array){
     const errorInfo = err.array({onlyFirstError: true})[0];
     err.message = `Not valid -${errorInfo.param}  ${errorInfo.msg}`;
-    res.status = 422;
+    err.status = 422;
   }
 
   res.status(err.status || 500);

@@ -7,30 +7,32 @@
   <body>
     <header>
       <h1><%= title %></h1>
-      <p>Pagina de la Practica de Node BackEnd</p>
-      <p><a href="/add.ejs">Añadir un nuevo anuncio</a></p>
+      <p><%=__('Pagina de la Practica de Node BackEnd')%></p>
     </header>
-    <h2>Listado los anuncios de NodePOP</h2>
+    <% getLocales().forEach(locale => { %>
+      <a href='/change-locale/<%= locale %>' ><%= locale %> </a> &nbsp;
+    <% }) %>
+    <h2><%=__('Listado los anuncios de NodePOP')%></h2>
     <form action="/" method="GET">
-      <label for="articulo">Nombre de artículo:</label>
+      <label for="articulo"><%=__('Nombre de artículo:')%></label>
       <input type="text" id="articulo" name="articulo"/><br />
 
-      <label for="precio">Precio:</label>
+      <label for="precio"><%=__('Precio:')%></label>
       <input type="text" id="precio" name="precio"/><br/>
       <label for="precio">
         <sup>
-          Se puede poner: Un valor fijo, Con un guion detras para que los valores sean superiores, Con un guion delante para que los valores sean inferiores, o Dos valores separados por un guion para sacar entre  esos valores.</li>
+          <%=__('Se puede poner: Un valor fijo, Con un guion detras para que los valores sean superiores, Con un guion delante para que los valores sean inferiores, o Dos valores separados por un guion para sacar entre  esos valores.')%></li>
         </sup> </label><br />
 
-      <label for="venta">En venta:</label>
+      <label for="venta"><%=__('En venta:')%></label>
       <input type="radio" id="venta" name="venta" value="V" ></input>
-      <label for="venta">Para comprar:</label>
+      <label for="venta"><%=__('Para comprar:')%></label>
       <input type="radio" id="venta" name="venta" value="C" ></input>
-      <label for="venta">Todos:</label>
+      <label for="venta"><%=__('Todos:')%></label>
       <input type="radio" id="venta" name="venta" value="T" checked></input>
       <br />
 
-      <label for="tags">Todos:</label>
+      <label for="tags"><%=__('Todos:')%></label>
       <select name="tags" id="tags" multiple = true>
         <%tags.forEach(tag => {%>
           <option value="<%=tag.tag%>"><%=tag.tag%></option>
@@ -38,14 +40,14 @@
       </select>
       <br />
 
-      <label for="limit">Paginación:</label>
+      <label for="limit"><%=__('Paginación:')%></label>
       <label for="limit">2</label>
       <input type="radio" id="limit" name="limit" value="2" <%if(limit==2){%>checked<%}%>></input>
       <label for="limit">5</label>
       <input type="radio" id="limit" name="limit" value="5" <%if(limit==5){%>checked<%}%>></input>
       <label for="limit">10</label>
       <input type="radio" id="limit" name="limit" value="10" <%if(limit==10){%>checked<%}%>></input>
-      <label for="limit">Todos:</label>
+      <label for="limit"><%=__('Todos:')%></label>
       <input type="radio" id="limit" name="limit" value="A" <%if(limit==total){%>checked<%}%>></input>
       <br />
       <%if(limit!==total){
@@ -58,17 +60,17 @@
     <div class="listado">
         <%nodePOPs.forEach(nodePOP => {%>
           <div class="anuncio">
-            <p><strong>Articulo: <%=nodePOP.articulo%></strong></p>
+            <p><strong><%=__('Articulo:')%> <%=nodePOP.articulo%></strong></p>
             <div class="detalle">
               <div>
-              <p>Precio: <%=nodePOP.precio%>€</p>
+              <p><%=__('Precio:')%> <%=nodePOP.precio%>€</p>
               <p> <% if(nodePOP.venta) {%>
-                    En Venta
+                  <%=__('En Venta')%>
                   <% } else{ %>
-                    Para comprar
+                    <%=__('Para comprar')%>
                   <% } %>
               </p>
-              <p>Etiquetas:
+              <p><%=__('Etiquetas:')%>
                 <ul>
                 <%nodePOP.tags.forEach(tag => {%>
                   <li><%=tag%></li>
@@ -81,7 +83,7 @@
         </div>
         <%});%>
     </div> 
-    <h2>Listar los tags</h2>
+    <h2><%=__('Listar los tags')%></h2>
     <div>
       <ul>
         <%tags.forEach(tag => {%>
