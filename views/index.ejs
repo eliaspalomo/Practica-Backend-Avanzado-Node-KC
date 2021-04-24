@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <header>
+      <h1><%= title %></h1>
+      <p>Pagina de la Practica de Node BackEnd</p>
+      <p><a href="/add.ejs">Añadir un nuevo anuncio</a></p>
+    </header>
+    <h2>Listado los anuncios de NodePOP</h2>
+    <form action="/" method="GET">
+      <label for="articulo">Nombre de artículo:</label>
+      <input type="text" id="articulo" name="articulo"/><br />
+
+      <label for="precio">Precio:</label>
+      <input type="text" id="precio" name="precio"/><br/>
+      <label for="precio">
+        <sup>
+          Se puede poner: Un valor fijo, Con un guion detras para que los valores sean superiores, Con un guion delante para que los valores sean inferiores, o Dos valores separados por un guion para sacar entre  esos valores.</li>
+        </sup> </label><br />
+
+      <label for="venta">En venta:</label>
+      <input type="radio" id="venta" name="venta" value="V" ></input>
+      <label for="venta">Para comprar:</label>
+      <input type="radio" id="venta" name="venta" value="C" ></input>
+      <label for="venta">Todos:</label>
+      <input type="radio" id="venta" name="venta" value="T" checked></input>
+      <br />
+
+      <label for="tags">Todos:</label>
+      <select name="tags" id="tags" multiple = true>
+        <%tags.forEach(tag => {%>
+          <option value="<%=tag.tag%>"><%=tag.tag%></option>
+        <%});%>
+      </select>
+      <br />
+
+      <label for="limit">Paginación:</label>
+      <label for="limit">2</label>
+      <input type="radio" id="limit" name="limit" value="2" <%if(limit==2){%>checked<%}%>></input>
+      <label for="limit">5</label>
+      <input type="radio" id="limit" name="limit" value="5" <%if(limit==5){%>checked<%}%>></input>
+      <label for="limit">10</label>
+      <input type="radio" id="limit" name="limit" value="10" <%if(limit==10){%>checked<%}%>></input>
+      <label for="limit">Todos:</label>
+      <input type="radio" id="limit" name="limit" value="A" <%if(limit==total){%>checked<%}%>></input>
+      <br />
+      <%if(limit!==total){
+        for(let i = 0; i <= (total/limit);i++) {%>
+          <input type="submit" value="<%=((i*limit)+1)%>-<%=(((i+1)*limit)<total)?((i+1)*limit):total%>" id="skip" name="skip"/>
+      <%}}%>
+      <br />
+      <input type="submit" value="Buscar"/>
+    </form>
+    <div class="listado">
+        <%nodePOPs.forEach(nodePOP => {%>
+          <div class="anuncio">
+            <p><strong>Articulo: <%=nodePOP.articulo%></strong></p>
+            <div class="detalle">
+              <div>
+              <p>Precio: <%=nodePOP.precio%>€</p>
+              <p> <% if(nodePOP.venta) {%>
+                    En Venta
+                  <% } else{ %>
+                    Para comprar
+                  <% } %>
+              </p>
+              <p>Etiquetas:
+                <ul>
+                <%nodePOP.tags.forEach(tag => {%>
+                  <li><%=tag%></li>
+                <%});%>
+                </ul>
+              </p>
+            </div>
+            <div><img src="/images/<%=nodePOP.foto%>" alt="Imagen"></div>
+          </div>
+        </div>
+        <%});%>
+    </div> 
+    <h2>Listar los tags</h2>
+    <div>
+      <ul>
+        <%tags.forEach(tag => {%>
+          <li><%=tag.tag%></li>
+        <%});%>
+      </ul>
+    </div> 
+  </body>
+</html>

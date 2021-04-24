@@ -1,0 +1,81 @@
+{
+    "nodePOPs":[
+        {
+            "articulo": "Tablet",
+            "venta": true,
+            "precio": 200,
+            "foto": "tablet.jpg",
+            "tags": ["tecnologia"]
+        },
+        {
+            "articulo": "Bicicleta carreras",
+            "venta": true,
+            "precio": 150,
+            "foto": "bicicleta_c.jpg",
+            "tags": ["tecnologia","deportes"]
+        },
+        {
+            "articulo": "Bicicleta",
+            "venta": false,
+            "precio": 50,
+            "foto": "bicicleta.jpg",
+            "tags": ["deportes"]
+        },
+        {
+            "articulo": "Parchis",
+            "venta": false,
+            "precio": 5,
+            "foto": "parchis.jpg",
+            "tags": ["juegos"]
+        },
+        {
+            "articulo": "Colonos de Catan",
+            "venta": true,
+            "precio": 30,
+            "foto": "catan.jpg",
+            "tags": ["juegos"]
+        },
+        {
+            "articulo": "Pantalla LED",
+            "venta": true,
+            "precio": 350,
+            "foto": "pantalla.jpg",
+            "tags": ["tecnologia","televion"]
+        },
+        {
+            "articulo": "Patines",
+            "venta": true,
+            "precio": 15,
+            "foto": "patines.jpg",
+            "tags": ["deportes"]
+        },
+        {
+            "articulo": "Movil 3210",
+            "venta": true,
+            "precio": 50,
+            "foto": "movil.jpg",
+            "tags": ["tecnologia"]
+        },
+        {
+            "articulo": "Recreativa",
+            "venta": true,
+            "precio": 225,
+            "foto": "recreativa.jpg",
+            "tags": ["tecnologia","juegos"]
+        },
+        {
+            "articulo": "Coche",
+            "venta": true,
+            "precio": 15000,
+            "foto": "coche.jpg",
+            "tags": ["coche"]
+        },
+        {
+            "articulo": "Coche de juguete",
+            "venta": false,
+            "precio": 150,
+            "foto": "cocheJuguete.jpg",
+            "tags": ["coche","juegos"]
+        }
+    ]
+}
