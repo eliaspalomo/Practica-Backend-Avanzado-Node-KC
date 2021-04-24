@@ -6,7 +6,7 @@ var logger = require('morgan');
  
 var app = express();
 
-require('./lbi/connectMongoose');
+require('./lib/connectMongoose');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
