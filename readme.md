@@ -9,7 +9,19 @@
    * Testing (Opcional)
    * BONUS TRACK
 * Desde la ruta que se ha copiado el codigo:
-   * Instalar todos los modulos necesarios si fuera necesario: npm install
-   * Ejecutando el comando para inicializar la base de datos: npm run installDB
-   * Ejecutando el comando para inicializar el servidor desarrollo: npm run dev
-   * Ejecutando el comando para inicializar el servidor producción: npm run prod
+   * Instalar todos los modulos necesarios si fuera necesario:
+   ~~~
+   npm install
+   ~~~
+   * Ejecutando el comando para inicializar la base de datos: 
+   ~~~
+   npm run installDB
+   ~~~
+   * Ejecutando el comando para inicializar el servidor desarrollo: 
+   ~~~
+   npm run dev
+   ~~~
+   * Ejecutando el comando para inicializar el servidor producción: 
+   ~~~
+   npm run prod
+   ~~~

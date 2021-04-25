@@ -9,11 +9,14 @@
     "prod": "cross-env PORT=3000 DEBUG=practica-backend-node-kc:*"
   },
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "cookie-parser": "~1.4.4",
     "cross-env": "^7.0.3",
     "debug": "~2.6.9",
+    "dotenv": "^8.2.0",
     "ejs": "~2.6.1",
     "express": "~4.16.1",
+    "express-session": "^1.17.1",
     "express-validator": "^6.9.2",
     "http-errors": "~1.6.3",
     "i18n": "^0.13.2",
