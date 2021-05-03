@@ -21,7 +21,11 @@
 
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <% if (session.usuarioLogado) { %>
+          <% if (!session.usuarioLogado) { %>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="/login"><%= __('Login') %></a>
+            </li>
+          <% } else { %>
              <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="/logout"><%= __('Logout') %></a>
             </li>

@@ -47,12 +47,6 @@ app.use(session({
   },
   store: MongoStore.create({ mongoUrl: process.env.MONGODB_CONNECTION_STR})
 }));
-// app.use((req, res, next) => {
-//   // sacar la cookie nodeapi-session de la petici�n
-//   // coger el sessionID
-//   // buscar en el almac�n de sesiones una sesi�n con sessionID que pone en la cookie
-//   // si encuentro la session la pon en req.session
-// })
 
 // hacemos disponible la sesion en todas las vistas
 app.use((req, res, next) => {
@@ -61,8 +55,9 @@ app.use((req, res, next) => {
 })
 app.use('/api/tag', require('./routes/api/tag'));
 
-app.use('/',       require('./routes/index'));
+app.use('/',              require('./routes/index'));
 app.use('/change-locale', require('./routes/change-locale'));
+app.use('/anuncios',      sessionAuth, require('./routes/anuncios'));
 app.get('/login',         loginController.index);
 app.post('/login',        loginController.post);
 app.get('/logout',        loginController.logout);

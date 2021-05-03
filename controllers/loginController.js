@@ -42,7 +42,7 @@ class LoginController {
       };
 
       // redirigir a zona privada
-      res.redirect('/');
+      res.redirect('/anuncios');
   
     } catch(err) {
       next(err);
