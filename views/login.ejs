@@ -10,7 +10,7 @@
 
   <form method="POST">
     <div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
+      <label for="exampleInputEmail1"><%=__('Email address')%></label>
       <input type="email"
              name="email"
              value="<%= email %>"
@@ -20,13 +20,13 @@
       <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
     </div>
     <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
+      <label for="exampleInputPassword1"><%=__('Password')%></label>
       <input type="password" 
              name="password"
              class="form-control" 
              id="exampleInputPassword1">
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary"><%=__('Submit')%></button>
     <div><%= error %></div>
   </form>
 

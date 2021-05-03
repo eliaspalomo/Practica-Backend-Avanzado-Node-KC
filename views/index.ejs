@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html> 
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
+<% include cabecera.html %>
     <header>
       <h1><%= title %></h1>
       <p><%=__('Pagina de la Practica de Node BackEnd')%></p>
     </header>
-    <% getLocales().forEach(locale => { %>
-      <a href='/change-locale/<%= locale %>' ><%= locale %> </a> &nbsp;
-    <% }) %>
     <h2><%=__('Listado los anuncios de NodePOP')%></h2>
     <form action="/" method="GET">
       <label for="articulo"><%=__('Nombre de artículo:')%></label>
@@ -91,5 +82,4 @@
         <%});%>
       </ul>
     </div> 
-  </body>
-</html>
+<% include pie.html %>

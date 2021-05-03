@@ -1,5 +1,5 @@
 {
-	"Pagina de la Practica de Node BackEnd": "Pagina de la Practica de Node BackEnd",
+	"Pagina de la Practica de Node BackEnd": "Pagina de la Practica de Node BackEnd Avanzado",
 	"Listado los anuncios de NodePOP": "Listado los anuncios de NodePOP",
 	"Nombre de artículo:": "Nombre de artículo:",
 	"Precio:": "Precio:",
@@ -12,5 +12,11 @@
 	"En Venta": "En Venta",
 	"Etiquetas:": "Etiquetas:",
 	"Para comprar": "Para comprar",
-	"Listar los tags": "Listar los tags"
+	"Listar los tags": "Listar los tags",
+	"Login": "Login",
+	"Logout": "Logout",
+	"NodeAPI Practica de Elias Palomo Vela 2021 BootCampX Keepcoding.": "NodeAPI Practica de Elias Palomo Vela 2021 BootCampX Keepcoding.",
+	"Email address": "Email address",
+	"Password": "Contraseña",
+	"Submit": "Entrar"
 }

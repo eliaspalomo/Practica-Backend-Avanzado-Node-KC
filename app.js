@@ -4,6 +4,9 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const session = require('express-session');
+const sessionAuth = require('./lib/sessionAuthMiddleware');
+const loginController = require('./controllers/loginController');
+const MongoStore = require('connect-mongo')
 
 var app = express();
 
@@ -24,14 +27,45 @@ app.use(express.static(path.join(__dirname, 'public')));
 /**
  * Rutas del API
  */
+app.post('/api/loginJWT',   loginController.postJWT);
 app.use('/api/nodepop', require('./routes/api/nodepop'));
 // Setup de i18n
 const i18n = require('./lib/i18nConfigure');
 app.use(i18n.init);
+
+/**
+ * Middleware de Gestion de sesiones del website
+ */
+app.use(session({
+  name: 'nodeapi-session',
+  secret: 'dsa987ad9/)H(/G()/9sa7d98',
+  saveUninitialized: true,
+  resave: false,
+  cookie: {
+    secure: process.env.NODE_ENV !== 'development', // solo se envian al servidor cuando la petici�n es HTTPS
+    maxAge: 1000 * 60 * 60 * 24 * 2 // 2 d�as de inactividad
+  },
+  store: MongoStore.create({ mongoUrl: process.env.MONGODB_CONNECTION_STR})
+}));
+// app.use((req, res, next) => {
+//   // sacar la cookie nodeapi-session de la petici�n
+//   // coger el sessionID
+//   // buscar en el almac�n de sesiones una sesi�n con sessionID que pone en la cookie
+//   // si encuentro la session la pon en req.session
+// })
+
+// hacemos disponible la sesion en todas las vistas
+app.use((req, res, next) => {
+  res.locals.session = req.session;
+  next();
+})
 app.use('/api/tag', require('./routes/api/tag'));
 
-app.use('/',      require('./routes/index'));
+app.use('/',       require('./routes/index'));
 app.use('/change-locale', require('./routes/change-locale'));
+app.get('/login',         loginController.index);
+app.post('/login',        loginController.post);
+app.get('/logout',        loginController.logout);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -51,8 +85,8 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
 
   if (isAPIRequest(req)) {
-    res.json({error: err.message})
-    return
+    res.json({ error: err.message });
+    return;
   }
   // set locals, only providing error in development
   res.locals.message = err.message;
